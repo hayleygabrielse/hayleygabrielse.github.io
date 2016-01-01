@@ -4000,6 +4000,7 @@ picture {
   opacity: 0;
   -webkit-box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
           box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.25);
+  visibility: hidden;
   position: fixed;
   top: 10%;
   left: 10%;
@@ -4021,6 +4022,7 @@ picture {
           transform: scale(1);
   -webkit-box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.25), 0 0 5rem 15rem rgba(0, 0, 0, 0.25);
           box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.25), 0 0 5rem 15rem rgba(0, 0, 0, 0.25);
+  visibility: visible;
   opacity: 1;
 }
 
@@ -4067,6 +4069,7 @@ picture {
           transform-origin: 0 0 0;
   opacity: 0;
   position: fixed;
+  visibility: hidden;
   top: 1rem;
   left: 1rem;
   width: -webkit-calc(100% - 2rem);
@@ -4096,6 +4099,7 @@ picture {
       -ms-transform: scale(1);
        -o-transform: scale(1);
           transform: scale(1);
+  visibility: visible;
   opacity: 1;
 }
 
@@ -4232,6 +4236,7 @@ picture {
           transform-origin: 0 0 0;
   opacity: 0;
   position: fixed;
+  visibility: hidden;
   top: 1rem;
   left: 1rem;
   width: -webkit-calc(100% - 2rem);
@@ -4263,6 +4268,7 @@ picture {
       -ms-transform: scale(1);
        -o-transform: scale(1);
           transform: scale(1);
+  visibility: visible;
   opacity: 1;
 }
 
@@ -4298,6 +4304,28 @@ picture {
           border-radius: 0.25rem;
 }
 
+.contact .contact-field-section .contact-field.error,
+.contact .contact-field-section .dev-contact-field.error,
+.contact .dev-contact-field-section .contact-field.error,
+.contact .dev-contact-field-section .dev-contact-field.error,
+.dev-contact .contact-field-section .contact-field.error,
+.dev-contact .contact-field-section .dev-contact-field.error,
+.dev-contact .dev-contact-field-section .contact-field.error,
+.dev-contact .dev-contact-field-section .dev-contact-field.error {
+  border-color: #e49684;
+}
+
+.contact .contact-field-section .contact-field.error:focus,
+.contact .contact-field-section .dev-contact-field.error:focus,
+.contact .dev-contact-field-section .contact-field.error:focus,
+.contact .dev-contact-field-section .dev-contact-field.error:focus,
+.dev-contact .contact-field-section .contact-field.error:focus,
+.dev-contact .contact-field-section .dev-contact-field.error:focus,
+.dev-contact .dev-contact-field-section .contact-field.error:focus,
+.dev-contact .dev-contact-field-section .dev-contact-field.error:focus {
+  outline-color: #e49684;
+}
+
 .contact .contact-field-section textarea.contact-field,
 .contact .contact-field-section textarea.dev-contact-field,
 .contact .dev-contact-field-section textarea.contact-field,
@@ -4307,6 +4335,14 @@ picture {
 .dev-contact .dev-contact-field-section textarea.contact-field,
 .dev-contact .dev-contact-field-section textarea.dev-contact-field {
   resize: vertical;
+}
+
+.contact .contact-field-section label.error,
+.contact .dev-contact-field-section label.error,
+.dev-contact .contact-field-section label.error,
+.dev-contact .dev-contact-field-section label.error {
+  color: #e49684;
+  font-size: 0.875rem;
 }
 
 .contact .contact-status,
