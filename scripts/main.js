@@ -17351,10 +17351,21 @@ var Search = (function () {
     value: function _filterSearchResults(term) {
       var _this3 = this;
 
+      /**
+       * Escape string for use as RegExp pattern
+       *
+       * @param {Str} str
+       *
+       * @return {Str}
+       */
+      var escapeRegExp = function escapeRegExp(str) {
+        return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+      };
+
       this.nodes.searchResult.each(function () {
         var result = $(this);
-        var content = result.html(); // result.text();
-        var rx = term.split(" ").join("|");
+        var content = result.text();
+        var rx = escapeRegExp(term.split(" ").join("|"));
 
         if (content.search(new RegExp(rx, "i")) > -1) {
           result.show();
