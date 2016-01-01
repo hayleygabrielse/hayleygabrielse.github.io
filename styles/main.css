@@ -4469,7 +4469,7 @@ picture {
 .cta .cta-content {
   position: relative;
   display: block;
-  padding: 2rem 1rem;
+  padding: 4rem 1rem 2rem;
   width: 100%;
   max-width: 40rem;
   margin: 0 auto;
@@ -4478,7 +4478,7 @@ picture {
 
 @media (min-width: 40rem) {
   .cta .cta-content {
-    padding: 4rem 1rem;
+    padding: 10rem 1rem 7.5rem;
   }
 }
 
