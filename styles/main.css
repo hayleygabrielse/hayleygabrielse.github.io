@@ -3577,7 +3577,7 @@ picture {
   position: relative;
   display: block;
   min-height: 28rem;
-  background: url("../images/background-lavender-plants.jpg") center/cover no-repeat;
+  background: url("../images/background-mountains.jpg") center/cover no-repeat;
   padding: 1rem;
   border-top: 1px solid #8fa998;
   border-bottom: 1px solid #8fa998;
@@ -3591,17 +3591,15 @@ picture {
   }
 }
 
-@supports (pointer-events: none) {
-  .hero:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(79, 52, 90, 0.75);
-    pointer-events: none;
-  }
+.hero:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(79, 52, 90, 0.75);
+  pointer-events: none;
 }
 
 .hero .hero-caption {
@@ -4442,31 +4440,30 @@ picture {
   overflow: hidden;
 }
 
-@supports (pointer-events: none) {
-  .cta:before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 25%;
-    background: -webkit-gradient(linear, left top, left bottom, from(#3E3640), to(rgba(62, 54, 64, 0)));
-    background: -webkit-linear-gradient(top, #3E3640, rgba(62, 54, 64, 0));
-    background: -moz-linear-gradient(top, #3E3640, rgba(62, 54, 64, 0));
-    background: -o-linear-gradient(top, #3E3640, rgba(62, 54, 64, 0));
-    background: linear-gradient(to bottom, #3E3640, rgba(62, 54, 64, 0));
-    pointer-events: none;
-  }
-  .cta:after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(79, 52, 90, 0.75);
-    pointer-events: none;
-  }
+.cta:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 25%;
+  background: -webkit-gradient(linear, left top, left bottom, from(#3E3640), to(rgba(62, 54, 64, 0)));
+  background: -webkit-linear-gradient(top, #3E3640, rgba(62, 54, 64, 0));
+  background: -moz-linear-gradient(top, #3E3640, rgba(62, 54, 64, 0));
+  background: -o-linear-gradient(top, #3E3640, rgba(62, 54, 64, 0));
+  background: linear-gradient(to bottom, #3E3640, rgba(62, 54, 64, 0));
+  pointer-events: none;
+}
+
+.cta:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(79, 52, 90, 0.75);
+  pointer-events: none;
 }
 
 .cta .cta-content {
