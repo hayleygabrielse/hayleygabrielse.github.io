@@ -17365,9 +17365,9 @@ var Search = (function () {
       this.nodes.searchResult.each(function () {
         var result = $(this);
         var content = result.text();
-        var rx = escapeRegExp(term.split(" ").join("|"));
+        var rx = escapeRegExp(term);
 
-        if (content.search(new RegExp(rx, "i")) > -1) {
+        if (new RegExp(rx, "i").test(content)) {
           result.show();
         } else {
           result.hide();
@@ -17378,7 +17378,7 @@ var Search = (function () {
         this.nodes.noSearchResults.hide();
       } else {
         this.nodes.noSearchResults.html(function () {
-          return "No search results available for '" + _this3._getSearchQuery(_this3.query.search) + "'";
+          return "No search results available for '" + _this3._getSearchBoxValue() + "'";
         }).show();
       }
     }
