@@ -3576,7 +3576,7 @@ picture {
 .hero {
   position: relative;
   display: block;
-  min-height: 28rem;
+  min-height: 35rem;
   background: url("../images/background-mountains.jpg") center/cover no-repeat;
   padding: 1rem;
   border-top: 1px solid #8fa998;
@@ -3602,24 +3602,50 @@ picture {
   pointer-events: none;
 }
 
-.hero .hero-caption {
+.hero .hero-content {
   display: block;
   position: absolute;
-  bottom: 5rem;
+  bottom: 7rem;
   left: 0;
-  color: #fff;
-  font-size: 1.75rem;
-  line-height: 1.25;
   text-align: center;
   width: 100%;
+  padding: 0 1rem;
   z-index: 1;
+}
+
+@media (min-width: 26.6666666667rem) {
+  .hero .hero-content {
+    bottom: 10rem;
+  }
+}
+
+.hero .hero-caption {
+  display: block;
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1.25;
+  max-width: 40rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 26.6666666667rem) {
+  .hero .hero-caption {
+    font-size: 1.75rem;
+  }
 }
 
 @media (min-width: 40rem) {
   .hero .hero-caption {
-    bottom: 10rem;
     font-size: 2.5rem;
   }
+}
+
+.hero .hero-subcaption {
+  display: block;
+  color: #D3D0D7;
+  font-size: 1rem;
+  max-width: 35rem;
+  margin: 0 auto;
 }
 
 .hero.hero-404 {
