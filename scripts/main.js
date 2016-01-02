@@ -17070,7 +17070,7 @@ var ContactForm = (function () {
       }).show();
 
       $.ajax({
-        url: "//formspree.io/" + atob(this.address),
+        url: "//formspree.io/" + base64.decode(this.address),
         method: "POST",
         dataType: "json",
         data: this.values
@@ -17759,7 +17759,7 @@ var Cart = (function () {
       var product = $.extend({}, this.products[item]);
 
       this.store.cart.add({
-        business: atob(this.account),
+        business: base64.decode(this.account),
         item_name: this._removeUnicode(product.name),
         amount: product.price,
         currency_code: this.currency
