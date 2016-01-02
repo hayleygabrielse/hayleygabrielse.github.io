@@ -17487,7 +17487,7 @@ var Search = (function () {
     value: function _updateUrlParams(query) {
       var params = $.param(query);
 
-      History.replaceState(null, null, "?" + params);
+      History.replaceState(null, document.title, "?" + params);
     }
 
     /**
