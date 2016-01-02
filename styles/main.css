@@ -3652,13 +3652,11 @@ picture {
   height: 100vh;
 }
 
-@supports (pointer-events: none) {
-  .hero.hero-404:after {
-    background: rgba(156, 191, 167, 0.75);
-  }
+.hero.hero-404:after {
+  background: rgba(156, 191, 167, 0.75);
 }
 
-.hero.hero-404 .hero-caption {
+.hero.hero-404 .hero-content {
   bottom: 35%;
 }
 
