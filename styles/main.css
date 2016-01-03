@@ -3576,8 +3576,8 @@ picture {
 .hero {
   position: relative;
   display: block;
-  -webkit-box-shadow: 0 1.25rem 1rem -1rem black inset, 0 -1.25rem 1rem -1rem black inset;
-          box-shadow: 0 1.25rem 1rem -1rem black inset, 0 -1.25rem 1rem -1rem black inset;
+  -webkit-box-shadow: 0 -1.25rem 1rem -1rem black inset;
+          box-shadow: 0 -1.25rem 1rem -1rem black inset;
   min-height: 35rem;
   background: url("../images/background-mountains.jpg") center/cover no-repeat;
   padding: 1rem;
