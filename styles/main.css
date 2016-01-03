@@ -4044,7 +4044,7 @@ picture {
   -webkit-border-radius: 0.25rem;
           border-radius: 0.25rem;
   overflow: hidden;
-  z-index: 9999;
+  z-index: 99999;
 }
 
 .product .product-details-section.open {
@@ -4117,7 +4117,7 @@ picture {
   -webkit-border-radius: 0.25rem;
           border-radius: 0.25rem;
   overflow: scroll;
-  z-index: 999;
+  z-index: 9999;
 }
 
 @media (min-width: 40rem) {
