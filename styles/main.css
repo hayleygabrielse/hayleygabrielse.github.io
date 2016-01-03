@@ -3576,6 +3576,8 @@ picture {
 .hero {
   position: relative;
   display: block;
+  -webkit-box-shadow: 0 1.25rem 1rem -1rem black inset, 0 -1.25rem 1rem -1rem black inset;
+          box-shadow: 0 1.25rem 1rem -1rem black inset, 0 -1.25rem 1rem -1rem black inset;
   min-height: 35rem;
   background: url("../images/background-mountains.jpg") center/cover no-repeat;
   padding: 1rem;
@@ -4457,6 +4459,8 @@ picture {
 .cta {
   position: relative;
   display: block;
+  -webkit-box-shadow: 0 1.25rem 1rem -1rem black inset, 0 -1.25rem 1rem -1rem black inset;
+          box-shadow: 0 1.25rem 1rem -1rem black inset, 0 -1.25rem 1rem -1rem black inset;
   text-align: center;
   background: url("../images/background-lavender-plants.jpg") center/cover no-repeat;
   border-top: 1px solid #8fa998;
