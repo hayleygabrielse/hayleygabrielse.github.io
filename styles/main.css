@@ -4,9 +4,6 @@
  * Update font awesome path
  */
 /**
- * Breakpoint
- */
-/**
  * Colors
  */
 /**
@@ -3579,11 +3576,23 @@ picture {
   -webkit-box-shadow: 0 -1.25rem 1rem -1rem black inset;
           box-shadow: 0 -1.25rem 1rem -1rem black inset;
   min-height: 35rem;
-  background: url("../images/background-mountains.jpg") center/cover no-repeat;
+  background: url("../images/background-mountains-sm.jpg") center/cover no-repeat;
   padding: 1rem;
   border-top: 1px solid #8fa998;
   border-bottom: 1px solid #8fa998;
   overflow: hidden;
+}
+
+@media (min-width: 40rem) {
+  .hero {
+    background-image: url("../images/background-mountains-md.jpg");
+  }
+}
+
+@media (min-width: 60rem) {
+  .hero {
+    background-image: url("../images/background-mountains.jpg");
+  }
 }
 
 @media (min-width: 40rem) {
@@ -3615,7 +3624,7 @@ picture {
   z-index: 1;
 }
 
-@media (min-width: 26.6666666667rem) {
+@media (min-width: 30rem) {
   .hero .hero-content {
     bottom: 10rem;
   }
@@ -3630,7 +3639,7 @@ picture {
   margin: 0 auto;
 }
 
-@media (min-width: 26.6666666667rem) {
+@media (min-width: 30rem) {
   .hero .hero-caption {
     font-size: 1.75rem;
   }
@@ -4462,10 +4471,22 @@ picture {
   -webkit-box-shadow: 0 1.25rem 1rem -1rem black inset, 0 -1.25rem 1rem -1rem black inset;
           box-shadow: 0 1.25rem 1rem -1rem black inset, 0 -1.25rem 1rem -1rem black inset;
   text-align: center;
-  background: url("../images/background-lavender-plants.jpg") center/cover no-repeat;
+  background: url("../images/background-lavender-plants-sm.jpg") center/cover no-repeat;
   border-top: 1px solid #8fa998;
   border-bottom: 1px solid #8fa998;
   overflow: hidden;
+}
+
+@media (min-width: 40rem) {
+  .cta {
+    background-image: url("../images/background-lavender-plants-md.jpg");
+  }
+}
+
+@media (min-width: 60rem) {
+  .cta {
+    background-image: url("../images/background-lavender-plants.jpg");
+  }
 }
 
 .cta:before {
