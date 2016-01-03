@@ -3667,8 +3667,20 @@ picture {
   background: rgba(156, 191, 167, 0.75);
 }
 
+@media (min-width: 30rem) {
+  .hero.hero-404 .hero-caption {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 40rem) {
+  .hero.hero-404 .hero-caption {
+    font-size: 4rem;
+  }
+}
+
 .hero.hero-404 .hero-content {
-  bottom: 35%;
+  bottom: 40%;
 }
 
 /**
