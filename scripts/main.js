@@ -16997,23 +16997,9 @@ var ContactForm = (function () {
           _this.values[field.name] = $(field).val();
         });
 
-        console.log(_this.nodes.contactFields, _this.values);
-
         _this.send();
       }
     });
-
-    // // Send email on form submission
-    // this.nodes.contactForm.submit((e) => {
-    //   this._stopEvent(e);
-    //   this._hideContactForm();
-    //
-    //   this.nodes.contactFields.each((i, field) => {
-    //     this.values[field.name] = $(field).val();
-    //   });
-    //
-    //   this.send();
-    // });
 
     // Show contact form on button click
     this.nodes.viewContactButton.click(function (e) {
