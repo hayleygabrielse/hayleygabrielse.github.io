@@ -16997,6 +16997,8 @@ var ContactForm = (function () {
           _this.values[field.name] = $(field).val();
         });
 
+        console.log(_this.nodes.contactFields, _this.values);
+
         _this.send();
       }
     });
