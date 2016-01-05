@@ -3864,10 +3864,10 @@ picture {
 }
 
 .search-form .search-clear {
-  -webkit-transition: 500ms;
-     -moz-transition: 500ms;
-       -o-transition: 500ms;
-          transition: 500ms;
+  -webkit-transition: 250ms;
+     -moz-transition: 250ms;
+       -o-transition: 250ms;
+          transition: 250ms;
   opacity: 1;
   position: absolute;
   top: 0;
