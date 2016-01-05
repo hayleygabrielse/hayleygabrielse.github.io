@@ -471,7 +471,7 @@ th {
   font-style: normal;
 }
 
-.fa, .search-form .search-icon.loading, .search-form .search-icon.loaded, .search-form .search-icon.failed, .contact .contact-status .success .contact-status-icon,
+.fa, .search-form .search-clear, .search-form .search-icon, .contact .contact-status .success .contact-status-icon,
 .contact .contact-status .success .dev-contact-status-icon,
 .contact .dev-contact-status .success .contact-status-icon,
 .contact .dev-contact-status .success .dev-contact-status-icon,
@@ -573,7 +573,7 @@ th {
   float: right;
 }
 
-.fa.fa-pull-left, .search-form .fa-pull-left.search-icon.loading, .search-form .fa-pull-left.search-icon.loaded, .search-form .fa-pull-left.search-icon.failed, .contact .contact-status .success .fa-pull-left.contact-status-icon,
+.fa.fa-pull-left, .search-form .fa-pull-left.search-clear, .search-form .fa-pull-left.search-icon, .contact .contact-status .success .fa-pull-left.contact-status-icon,
 .contact .contact-status .success .fa-pull-left.dev-contact-status-icon,
 .contact .dev-contact-status .success .fa-pull-left.contact-status-icon,
 .contact .dev-contact-status .success .fa-pull-left.dev-contact-status-icon,
@@ -605,7 +605,7 @@ th {
   margin-right: .3em;
 }
 
-.fa.fa-pull-right, .search-form .fa-pull-right.search-icon.loading, .search-form .fa-pull-right.search-icon.loaded, .search-form .fa-pull-right.search-icon.failed, .contact .contact-status .success .fa-pull-right.contact-status-icon,
+.fa.fa-pull-right, .search-form .fa-pull-right.search-clear, .search-form .fa-pull-right.search-icon, .contact .contact-status .success .fa-pull-right.contact-status-icon,
 .contact .contact-status .success .fa-pull-right.dev-contact-status-icon,
 .contact .dev-contact-status .success .fa-pull-right.contact-status-icon,
 .contact .dev-contact-status .success .fa-pull-right.dev-contact-status-icon,
@@ -646,7 +646,7 @@ th {
   float: left;
 }
 
-.fa.pull-left, .search-form .pull-left.search-icon.loading, .search-form .pull-left.search-icon.loaded, .search-form .pull-left.search-icon.failed, .contact .contact-status .success .pull-left.contact-status-icon,
+.fa.pull-left, .search-form .pull-left.search-clear, .search-form .pull-left.search-icon, .contact .contact-status .success .pull-left.contact-status-icon,
 .contact .contact-status .success .pull-left.dev-contact-status-icon,
 .contact .dev-contact-status .success .pull-left.contact-status-icon,
 .contact .dev-contact-status .success .pull-left.dev-contact-status-icon,
@@ -678,7 +678,7 @@ th {
   margin-right: .3em;
 }
 
-.fa.pull-right, .search-form .pull-right.search-icon.loading, .search-form .pull-right.search-icon.loaded, .search-form .pull-right.search-icon.failed, .contact .contact-status .success .pull-right.contact-status-icon,
+.fa.pull-right, .search-form .pull-right.search-clear, .search-form .pull-right.search-icon, .contact .contact-status .success .pull-right.contact-status-icon,
 .contact .contact-status .success .pull-right.dev-contact-status-icon,
 .contact .dev-contact-status .success .pull-right.contact-status-icon,
 .contact .dev-contact-status .success .pull-right.dev-contact-status-icon,
@@ -929,6 +929,7 @@ th {
 .fa-remove:before,
 .fa-close:before,
 .fa-times:before,
+.search-form .search-clear:before,
 .contact .contact-status .fail .contact-status-icon:before,
 .contact .contact-status .fail .dev-contact-status-icon:before,
 .contact .dev-contact-status .fail .contact-status-icon:before,
@@ -3862,12 +3863,31 @@ picture {
   opacity: 0;
 }
 
+.search-form .search-clear {
+  -webkit-transition: 500ms;
+     -moz-transition: 500ms;
+       -o-transition: 500ms;
+          transition: 500ms;
+  opacity: 1;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #8fa998;
+  font-size: 0.875rem;
+  margin: 1rem;
+  cursor: pointer;
+}
+
+.search-form .search-clear.disabled {
+  opacity: 0;
+}
+
 .search-form .search-icon {
   position: absolute;
   top: 0;
   left: 0;
   color: #5d4e6d;
-  font-size: 1.25rem;
+  font-size: 1rem;
   padding: 0.95rem 0.75rem;
 }
 

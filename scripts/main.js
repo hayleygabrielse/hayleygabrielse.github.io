@@ -17308,6 +17308,14 @@ var Search = (function () {
     this.nodes.searchForm.submit(function (e) {
       return e.preventDefault();
     });
+
+    // Clear form when clicked
+    this.nodes.searchClear.click(function (e) {
+      e.preventDefault();
+
+      _this._clearSearchBox();
+      _this.nodes.searchBox.trigger("keyup");
+    });
   }
 
   /**
@@ -17370,7 +17378,9 @@ var Search = (function () {
       }).show();
 
       setInterval(function () {
-        if (_this2._getSearchBoxValue()) return;
+        if (_this2.query.search || _this2._getSearchBoxValue()) {
+          return;
+        }
 
         _this2.nodes.searchRotatingTerm.addClass("disabled");
 
@@ -17407,6 +17417,7 @@ var Search = (function () {
       // Update search terms on input (keyup is for older non-HTML5 browsers)
       this.nodes.searchBox.on("keyup", function () {
         _this2.nodes.searchRotatingTerm.addClass("disabled");
+        _this2.nodes.searchClear.removeClass("disabled");
 
         var term = _this2._getSearchQuery();
 
@@ -17416,6 +17427,7 @@ var Search = (function () {
         });
 
         if (!term) {
+          _this2.nodes.searchClear.addClass("disabled");
           _this2._filterSearchResults(term);
           return;
         }
@@ -17852,6 +17864,7 @@ jQuery(function ($) {
       searchForm: $(".search-form"),
       searchIcon: $(".search-icon"),
       searchRotatingTerm: $(".search-rotating-term"),
+      searchClear: $(".search-clear"),
       searchBox: $(".search-input")
     });
 
