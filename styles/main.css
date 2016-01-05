@@ -3869,6 +3869,7 @@ picture {
        -o-transition: 250ms;
           transition: 250ms;
   opacity: 1;
+  visibility: visible;
   position: absolute;
   top: 0;
   right: 0;
@@ -3880,6 +3881,7 @@ picture {
 
 .search-form .search-clear.disabled {
   opacity: 0;
+  visibility: hidden;
 }
 
 .search-form .search-icon {
