@@ -3687,8 +3687,18 @@ picture {
   }
 }
 
+.hero.hero-404 .hero-subcaption {
+  color: #fff;
+}
+
 .hero.hero-404 .hero-content {
-  bottom: 50%;
+  bottom: 25%;
+}
+
+@media (min-width: 40rem) {
+  .hero.hero-404 .hero-content {
+    bottom: 45%;
+  }
 }
 
 /**
