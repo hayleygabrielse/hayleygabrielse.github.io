@@ -17354,6 +17354,8 @@ var Search = (function () {
 
     this.nodes.searchNameOnly.change(function () {
       _this.nameOnly = _this.nodes.searchNameOnly.is(":checked");
+      _this.nodes.searchMinPrice.attr("disabled", _this.nameOnly);
+      _this.nodes.searchMaxPrice.attr("disabled", _this.nameOnly);
     });
 
     // Reset all fields when clicked
@@ -17361,7 +17363,10 @@ var Search = (function () {
       _this._stopEvent(e);
 
       _this.nodes.searchNameOnly.attr("checked", false);
+      _this.nameOnly = false;
+      _this.nodes.searchMinPrice.val("");
       _this.minPrice = _this.minPriceDefault;
+      _this.nodes.searchMaxPrice.val("");
       _this.maxPrice = _this.maxPriceDefault;
 
       _this.nodes.searchBox.trigger("keyup");
