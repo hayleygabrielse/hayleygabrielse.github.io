@@ -17291,6 +17291,12 @@ var Search = (function () {
     this.nodes = nodes;
     this.query = this._getUrlParams(History.getState().hash);
     this.terms = [];
+    this.settingsVisible = false;
+    this.minPriceDefault = 0;
+    this.maxPriceDefault = 1000;
+    this.minPrice = this.minPriceDefault;
+    this.maxPrice = this.maxPriceDefault;
+    this.nameOnly = false;
 
     // Get current results by the first n characters to maintain speed with
     // such a large dataset
@@ -17311,9 +17317,60 @@ var Search = (function () {
 
     // Clear form when clicked
     this.nodes.searchClear.click(function (e) {
-      e.preventDefault();
+      _this._stopEvent(e);
 
       _this._clearSearchBox();
+      _this.nodes.searchBox.trigger("keyup");
+    });
+
+    // Toggle search settings when clicked
+    this.nodes.searchEdit.click(function (e) {
+      _this._stopEvent(e);
+
+      if (_this.settingsVisible) {
+        _this._hideSettings();
+      } else {
+        _this._showSettings();
+      }
+    });
+
+    // Close when clicked outside of settings
+    $("body").click(function (e) {
+      if (_this.nodes.searchSettings[0] === e.target || _this.nodes.searchSettings.find(e.target).length) {
+        return;
+      }
+
+      _this._hideSettings(e);
+    });
+
+    // Update min and max prices
+    this.nodes.searchMinPrice.on("keyup", function () {
+      _this.minPrice = parseInt(_this.nodes.searchMinPrice.val()) || _this.minPriceDefault;
+    });
+
+    this.nodes.searchMaxPrice.on("keyup", function () {
+      _this.maxPrice = parseInt(_this.nodes.searchMaxPrice.val()) || _this.maxPriceDefault;
+    });
+
+    this.nodes.searchNameOnly.change(function () {
+      _this.nameOnly = _this.nodes.searchNameOnly.is(":checked");
+    });
+
+    // Reset all fields when clicked
+    this.nodes.searchSettingsReset.on("click", function (e) {
+      _this._stopEvent(e);
+
+      _this.nodes.searchNameOnly.attr("checked", false);
+      _this.minPrice = _this.minPriceDefault;
+      _this.maxPrice = _this.maxPriceDefault;
+
+      _this.nodes.searchBox.trigger("keyup");
+    });
+
+    // Apply settings when clicked
+    this.nodes.searchSettingsApply.on("click", function (e) {
+      _this._stopEvent(e);
+
       _this.nodes.searchBox.trigger("keyup");
     });
   }
@@ -17418,6 +17475,8 @@ var Search = (function () {
       this.nodes.searchBox.on("keyup", function () {
         _this2.nodes.searchRotatingTerm.addClass("disabled");
         _this2.nodes.searchClear.removeClass("disabled");
+        _this2._hideSettings();
+        _this2._hideEditIcon();
 
         var term = _this2._getSearchQuery();
 
@@ -17429,6 +17488,7 @@ var Search = (function () {
         if (!term) {
           _this2.nodes.searchClear.addClass("disabled");
           _this2._filterSearchResults(term);
+          _this2._showEditIcon();
           return;
         }
 
@@ -17514,6 +17574,10 @@ var Search = (function () {
     value: function _filterSearchResults(term) {
       var _this3 = this;
 
+      var searchByNameOnly = this.nameOnly;
+      var minPrice = this.minPrice;
+      var maxPrice = this.maxPrice;
+
       /**
        * Escape string for use as RegExp pattern
        *
@@ -17530,10 +17594,24 @@ var Search = (function () {
         var content = result.text();
         var rx = escapeRegExp(term);
 
-        if (new RegExp(rx, "i").test(content)) {
-          result.show();
+        if (searchByNameOnly) {
+          var name = result.find(".product-name").first().text();
+          var wordRx = rx.replace(/\W/g, ""); // Used for acroynyms like R.C.
+
+          if (new RegExp(rx, "i").test(name) || new RegExp(wordRx, "i").test(name)) {
+            result.show();
+          } else {
+            result.hide();
+          }
         } else {
-          result.hide();
+          var price = accounting.unformat(result.find(".product-price").text());
+          var inPriceRange = price >= minPrice && price <= maxPrice;
+
+          if (inPriceRange && new RegExp(rx, "i").test(content)) {
+            result.show();
+          } else {
+            result.hide();
+          }
         }
       });
 
@@ -17605,6 +17683,56 @@ var Search = (function () {
     }
 
     /**
+     * Show search settings
+     *
+     * @return {Void}
+     */
+
+  }, {
+    key: "_showSettings",
+    value: function _showSettings() {
+      this.nodes.searchSettings.addClass("open");
+      this.settingsVisible = true;
+    }
+
+    /**
+     * Hide search settings
+     *
+     * @return {Void}
+     */
+
+  }, {
+    key: "_hideSettings",
+    value: function _hideSettings() {
+      this.nodes.searchSettings.removeClass("open");
+      this.settingsVisible = false;
+    }
+
+    /**
+     * Show search edit settings button
+     *
+     * @return {Void}
+     */
+
+  }, {
+    key: "_showEditIcon",
+    value: function _showEditIcon() {
+      this.nodes.searchEdit.removeClass("disabled");
+    }
+
+    /**
+     * Hide search edit settings button
+     *
+     * @return {Void}
+     */
+
+  }, {
+    key: "_hideEditIcon",
+    value: function _hideEditIcon() {
+      this.nodes.searchEdit.addClass("disabled");
+    }
+
+    /**
      * Get URL query parameters
      *
      * @private
@@ -17665,6 +17793,21 @@ var Search = (function () {
       if (this.terms.length === 0) return;
       if (this.terms.length == 1) return arr[0];
       return this.terms[Math.floor(Math.random() * this.terms.length)];
+    }
+
+    /**
+     * Prevent default and stop event propagation
+     *
+     * @private
+     *
+     * @return {Void}
+     */
+
+  }, {
+    key: "_stopEvent",
+    value: function _stopEvent(e) {
+      e.stopPropagation();
+      e.preventDefault();
     }
   }]);
 
@@ -17865,10 +18008,18 @@ jQuery(function ($) {
       searchIcon: $(".search-icon"),
       searchRotatingTerm: $(".search-rotating-term"),
       searchClear: $(".search-clear"),
+      searchEdit: $(".search-edit"),
+      searchSettings: $(".search-settings"),
+      searchNameOnly: $(".search-settings-name-only"),
+      searchMinPrice: $(".search-settings-min-price"),
+      searchMaxPrice: $(".search-settings-max-price"),
+      searchSettingsReset: $(".search-settings-reset-button"),
+      searchSettingsApply: $(".search-settings-apply-button"),
       searchBox: $(".search-input")
     });
 
     search.render(data);
+    window.search = search;
 
     // Instantiate a new cart
     var cart = new Cart(data.products, {
