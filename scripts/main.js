@@ -17579,6 +17579,7 @@ var Search = (function () {
     value: function _filterSearchResults(term) {
       var _this3 = this;
 
+      var searchBoxValue = this._getSearchBoxValue();
       var searchByNameOnly = this.nameOnly;
       var minPrice = this.minPrice;
       var maxPrice = this.maxPrice;
@@ -17601,9 +17602,10 @@ var Search = (function () {
 
         if (searchByNameOnly) {
           var name = result.find(".product-name").first().text();
-          var wordRx = rx.replace(/\W/g, ""); // Used for acroynyms like R.C.
+          var nameRx = escapeRegExp(searchBoxValue);
+          var cleanRx = nameRx.replace(/\W/g, ""); // Used for acroynyms like R.C.
 
-          if (new RegExp(rx, "i").test(name) || new RegExp(wordRx, "i").test(name)) {
+          if (new RegExp(nameRx, "i").test(name) || new RegExp(cleanRx, "i").test(name)) {
             result.show();
           } else {
             result.hide();
