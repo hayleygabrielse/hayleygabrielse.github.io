@@ -17593,9 +17593,20 @@ var Search = function () {
       };
 
       this.nodes.searchResult.each(function () {
-        var result = $(this);
-        var content = result.text();
         var rx = escapeRegExp(term);
+        var result = $(this);
+
+        // Get comment nodes containing terms
+        var terms;
+        try {
+          terms = result.find('.product-details').contents().filter(function (_, n) {
+            return n.nodeType === 8;
+          }).get(0).nodeValue;
+        } catch (e) {
+          terms = '';
+        }
+
+        console.log({ terms: terms });
 
         if (searchByNameOnly) {
           var name = result.find(".product-name").first().text();
@@ -17611,7 +17622,7 @@ var Search = function () {
           var price = accounting.unformat(result.find(".product-price").text());
           var inPriceRange = price >= minPrice && price <= maxPrice;
 
-          if (inPriceRange && new RegExp(rx, "i").test(content)) {
+          if (inPriceRange && new RegExp(rx, "i").test(terms)) {
             result.show();
           } else {
             result.hide();
