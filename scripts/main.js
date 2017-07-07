@@ -17885,7 +17885,7 @@ var Cart = function () {
 
       // Clear cart when customer checks out
       this.store.cart.on("checkout", function (e) {
-        _this.store.reset();
+        setTimeout(_this.store.reset); // Reset on next tick (else we clear all cart data)
       });
 
       // Open cart when view cart button is clicked
