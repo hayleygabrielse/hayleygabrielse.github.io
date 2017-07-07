@@ -17606,8 +17606,6 @@ var Search = function () {
           terms = '';
         }
 
-        console.log({ terms: terms });
-
         if (searchByNameOnly) {
           var name = result.find(".product-name").first().text();
           var nameRx = escapeRegExp(searchBoxValue);
