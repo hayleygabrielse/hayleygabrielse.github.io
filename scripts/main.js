@@ -1,5 +1,5 @@
 /*! hayley-young-living - v1.0.0
-* Copyright (c) 2016  <> */
+* Copyright (c) 2017  <> */
 
 /*!
  * jQuery JavaScript Library v1.9.1
@@ -16957,15 +16957,14 @@ typeof JSON!="object"&&(JSON={}),function(){"use strict";function f(e){return e<
 ;
 "use strict";
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
  * @class Contact
  */
-
-var ContactForm = (function () {
+var ContactForm = function () {
 
   /**
    * @constructor
@@ -16973,7 +16972,6 @@ var ContactForm = (function () {
    * @param {Str} address
    * @param {Obj} nodes
    */
-
   function ContactForm(address, nodes) {
     var _this = this;
 
@@ -17028,6 +17026,7 @@ var ContactForm = (function () {
    *
    * @return {Void}
    */
+
 
   _createClass(ContactForm, [{
     key: "send",
@@ -17143,19 +17142,18 @@ var ContactForm = (function () {
   }]);
 
   return ContactForm;
-})();
+}();
 ;
 "use strict";
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
  * @class Product
  */
-
-var Product = (function () {
+var Product = function () {
 
   /**
    * @constructor
@@ -17163,7 +17161,6 @@ var Product = (function () {
    * @param {Cart} cart
    * @param {Obj}  nodes
    */
-
   function Product(cart, nodes) {
     var _this = this;
 
@@ -17210,6 +17207,7 @@ var Product = (function () {
    *
    * @return {Void}
    */
+
 
   _createClass(Product, [{
     key: "_showDetails",
@@ -17262,26 +17260,24 @@ var Product = (function () {
   }]);
 
   return Product;
-})();
+}();
 ;
 "use strict";
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
  * @class Search
  */
-
-var Search = (function () {
+var Search = function () {
 
   /**
    * @constructor
    *
    * @param {Obj}  nodes
    */
-
   function Search(endpoint, nodes) {
     var _this = this;
 
@@ -17387,6 +17383,7 @@ var Search = (function () {
    *
    * @return {Void}
    */
+
 
   _createClass(Search, [{
     key: "render",
@@ -17558,7 +17555,7 @@ var Search = (function () {
   }, {
     key: "_getSearchQuery",
     value: function _getSearchQuery() {
-      var fallback = arguments.length <= 0 || arguments[0] === undefined ? "" : arguments[0];
+      var fallback = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : "";
 
       var value = this.nodes.searchBox.val() || fallback || "";
       return value.slice(0, this.maxPatternLength - 1);
@@ -17819,19 +17816,18 @@ var Search = (function () {
   }]);
 
   return Search;
-})();
+}();
 ;
 "use strict";
 
-var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 /**
  * @class Cart
  */
-
-var Cart = (function () {
+var Cart = function () {
 
   /**
    * @constructor
@@ -17839,7 +17835,6 @@ var Cart = (function () {
    * @param {Arr} products
    * @param {Obj} nodes
    */
-
   function Cart(products, nodes) {
     _classCallCheck(this, Cart);
 
@@ -17857,6 +17852,7 @@ var Cart = (function () {
    *
    * @return {Void}
    */
+
 
   _createClass(Cart, [{
     key: "render",
@@ -17996,7 +17992,7 @@ var Cart = (function () {
   }]);
 
   return Cart;
-})();
+}();
 ;
 "use strict";
 
