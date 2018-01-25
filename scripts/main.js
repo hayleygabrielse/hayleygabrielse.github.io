@@ -1,5 +1,5 @@
 /*! hayley-young-living - v1.0.0
-* Copyright (c) 2017  <> */
+* Copyright (c) 2018  <> */
 
 /*!
  * jQuery JavaScript Library v1.9.1
