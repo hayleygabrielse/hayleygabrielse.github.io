@@ -4739,6 +4739,7 @@ picture {
 
 .starter-kits-overflow {
   overflow: scroll;
+  padding: 1rem 0;
 }
 
 .starter-kits-list {
@@ -4759,12 +4760,12 @@ picture {
           flex-flow: nowrap;
   list-style: none;
   margin: 0;
-  padding: 0.25rem 1rem;
+  padding: 0 1rem;
 }
 
 @media (min-width: 40rem) {
   .starter-kits-list {
-    padding: 0.25rem 2rem;
+    padding: 0 2rem;
   }
 }
 
@@ -4803,6 +4804,13 @@ picture {
 }
 
 .starter-kit {
+  -webkit-transform: translate3d(0, 0, 0);
+     -moz-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-transition: -webkit-transform 250ms;
+     -moz-transition: -moz-transform 250ms;
+       -o-transition: -o-transform 250ms;
+          transition: transform 250ms;
   position: relative;
   min-width: 15rem;
   background: #fff;
@@ -4811,6 +4819,13 @@ picture {
   -webkit-box-shadow: 1px 1px 1px 1px lightgray;
           box-shadow: 1px 1px 1px 1px lightgray;
   overflow: hidden;
+  cursor: pointer;
+}
+
+.starter-kit:hover {
+  -webkit-transform: scale(1.05) translate3d(0, 0, 0);
+     -moz-transform: scale(1.05) translate3d(0, 0, 0);
+          transform: scale(1.05) translate3d(0, 0, 0);
 }
 
 .starter-kit-content {
@@ -4863,6 +4878,8 @@ picture {
 }
 
 .starter-kits-action-button {
+  display: inline-block;
   font-size: 1.15rem;
-  margin: 0 0.25rem;
+  white-space: nowrap;
+  margin: 0.25rem;
 }
