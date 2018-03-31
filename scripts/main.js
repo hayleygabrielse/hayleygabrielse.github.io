@@ -1,6 +1,3 @@
-/*! hayley-young-living - v1.0.0
-* Copyright (c) 2018  <> */
-
 /*!
  * jQuery JavaScript Library v1.9.1
  * http://jquery.com/
@@ -17294,6 +17291,12 @@ var Search = function () {
     this.maxPrice = this.maxPriceDefault;
     this.nameOnly = false;
 
+    if (this.query && this.query.search) {
+      $("html, body").animate({
+        scrollTop: this.nodes.searchResults.offset().top
+      });
+    }
+
     // Get current results by the first n characters to maintain speed with
     // such a large dataset
     //
@@ -17308,7 +17311,11 @@ var Search = function () {
 
     // Disable form submission
     this.nodes.searchForm.submit(function (e) {
-      return e.preventDefault();
+      e.preventDefault();
+
+      $("html, body").animate({
+        scrollTop: _this.nodes.searchResults.offset().top
+      }, 250);
     });
 
     // Clear form when clicked
@@ -17433,7 +17440,7 @@ var Search = function () {
 
       // Rotate through and display a random term
       this.nodes.searchRotatingTerm.css({
-        left: this.nodes.searchBox.attr("placeholder").length * 8
+        left: this.nodes.searchBox.attr("placeholder").length * 8.55
       }).show();
 
       setInterval(function () {
@@ -17470,6 +17477,10 @@ var Search = function () {
         noSuggestionNotice: "No suggestions available",
         onSelect: function onSelect(query) {
           _this2.nodes.searchBox.trigger("keyup");
+
+          $("html, body").animate({
+            scrollTop: _this2.nodes.searchResults.offset().top
+          }, 250);
         }
       });
 

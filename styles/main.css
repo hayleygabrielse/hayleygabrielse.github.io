@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,700,400italic");
+@import url("https://fonts.googleapis.com/css?family=Nunito:400,400italic,700,900");
 /**
  * Update font awesome path
  */
@@ -3424,7 +3424,7 @@ html {
 
 body {
   color: #000;
-  font: 16px/1.5 "Source Sans Pro", sans-serif;
+  font: 16px/1.5 "Nunito", sans-serif;
 }
 
 /**
@@ -3635,8 +3635,9 @@ picture {
   display: block;
   color: #fff;
   font-size: 1.5rem;
+  font-weight: 900;
   line-height: 1.25;
-  max-width: 40rem;
+  max-width: 50rem;
   margin: 0 auto;
 }
 
@@ -3945,8 +3946,7 @@ picture {
   top: 0;
   left: 1rem;
   color: #8fa998;
-  line-height: 1.4;
-  padding: 0.75rem 0;
+  line-height: 3;
   pointer-events: none;
 }
 
@@ -4037,14 +4037,21 @@ picture {
 .search-results {
   display: block;
   max-width: 40rem;
-  margin: 2rem auto;
-  padding: 0 1rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
 }
 
 @media (min-width: 40rem) {
   .search-results {
-    padding: 0;
+    padding: 2rem 0;
   }
+}
+
+.search-results .search-results-title {
+  color: #b1a9b9;
+  font-weight: 400;
+  font-size: 1.25rem;
+  margin: 0 0 1rem;
 }
 
 .search-results .search-result {
@@ -4126,6 +4133,7 @@ picture {
 
 .product .product-content-section .product-name {
   font-size: 1.25rem;
+  font-weight: 900;
   margin: 0;
 }
 
@@ -4133,7 +4141,7 @@ picture {
   display: block;
   font-size: 1rem;
   font-weight: 700;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #f7f7f7;
   padding-bottom: 0.5rem;
 }
 
@@ -4227,6 +4235,7 @@ picture {
 
 .product .product-details-section .product-details .product-name {
   margin: 0.5rem 0 0;
+  font-weight: 900;
 }
 
 .product .product-details-section .product-button-section {
@@ -4678,7 +4687,8 @@ picture {
 .cta .cta-caption {
   display: block;
   color: #fff;
-  font-size: 1.5rem;
+  font-weight: 900;
+  font-size: 1.25rem;
   text-align: center;
   line-height: 1.25;
   width: 100%;
@@ -4687,7 +4697,7 @@ picture {
 
 @media (min-width: 40rem) {
   .cta .cta-caption {
-    font-size: 1.75rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -4715,4 +4725,144 @@ picture {
 
 .dev-cta button:focus {
   outline: none;
+}
+
+/**
+ * Starter Kits
+ */
+.starter-kits {
+  position: relative;
+  z-index: 1;
+  margin: 2rem 0;
+  padding: 0;
+}
+
+.starter-kits-overflow {
+  overflow: scroll;
+}
+
+.starter-kits-list {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+     -moz-box-orient: horizontal;
+     -moz-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-flex-flow: nowrap;
+      -ms-flex-flow: nowrap;
+          flex-flow: nowrap;
+  list-style: none;
+  margin: 0;
+  padding: 0.25rem 1rem;
+}
+
+@media (min-width: 40rem) {
+  .starter-kits-list {
+    padding: 0.25rem 2rem;
+  }
+}
+
+.starter-kit-wrapper {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 15rem;
+     -moz-box-flex: 0;
+      -ms-flex: 0 0 15rem;
+          flex: 0 0 15rem;
+  -webkit-box-flex: 1;
+  -webkit-flex-grow: 1;
+     -moz-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0;
+  margin: 0 1rem 0 0;
+  height: auto;
+}
+
+.starter-kit-wrapper:last-of-type {
+  margin-right: 0;
+}
+
+@media (max-width: 80rem) {
+  .starter-kit-wrapper:last-of-type {
+    padding-right: 2rem;
+  }
+}
+
+@media (max-width: 40rem) {
+  .starter-kit-wrapper:last-of-type {
+    padding-right: 1rem;
+  }
+}
+
+.starter-kit {
+  position: relative;
+  min-width: 15rem;
+  background: #fff;
+  -webkit-border-radius: 0.25rem;
+          border-radius: 0.25rem;
+  -webkit-box-shadow: 1px 1px 1px 1px lightgray;
+          box-shadow: 1px 1px 1px 1px lightgray;
+  overflow: hidden;
+}
+
+.starter-kit-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 5rem 1rem 0.75rem;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), color-stop(50%, rgba(255, 255, 255, 0.9)));
+  background: -webkit-linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9) 50%);
+  background: -moz-linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9) 50%);
+  background: -o-linear-gradient(top, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9) 50%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.9) 50%);
+}
+
+.starter-kit-name {
+  font-size: 1rem;
+  font-weight: 900;
+  margin: 0;
+}
+
+.starter-kit-price {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+.starter-kits-action {
+  width: -webkit-calc(100% - 2rem);
+  width: -moz-calc(100% - 2rem);
+  width: calc(100% - 2rem);
+  text-align: center;
+  margin: 2rem auto 0;
+  padding: 0 1rem 3rem;
+  border-bottom: 1px solid #f7f7f7;
+}
+
+@media (min-width: 40rem) {
+  .starter-kits-action {
+    width: -webkit-calc(100% - 4rem);
+    width: -moz-calc(100% - 4rem);
+    width: calc(100% - 4rem);
+  }
+}
+
+.starter-kits-action-text {
+  display: block;
+  font-size: 1rem;
+  max-width: 35rem;
+  margin: 1rem auto;
+}
+
+.starter-kits-action-button {
+  font-size: 1.15rem;
+  margin: 0 0.25rem;
 }
