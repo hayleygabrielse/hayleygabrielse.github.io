@@ -4738,6 +4738,7 @@ picture {
 }
 
 .starter-kits-overflow {
+  -webkit-overflow-scrolling: touch;
   overflow: scroll;
   padding: 1rem 0;
 }
